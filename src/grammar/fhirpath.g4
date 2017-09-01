@@ -1,10 +1,5 @@
 grammar fhirpath;
 
-// Grammar rules
-
-//prog: line (line)*;
-//line: ID ( '(' expr ')') ':' expr '\r'? '\n';
-
 expression
         : term                                                      #termExpression
         | expression '.' invocation                                 #invocationExpression

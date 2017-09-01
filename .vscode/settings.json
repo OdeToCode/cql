@@ -1,0 +1,5 @@
+{
+    "antlr4.generation.mode": "external",
+    "antlr4.generation.language": "CSharp",
+    "antlr4.generation.outputDir": "../CqlLexerParser"
+}
