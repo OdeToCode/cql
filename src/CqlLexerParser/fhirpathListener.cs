@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from c:\dev\cql\src\Grammar/fhirpath.g4 by ANTLR 4.7
+// Generated from c:\dev\cql\src\grammar/fhirpath.g4 by ANTLR 4.7
 
 // Unreachable code detected
 #pragma warning disable 0162

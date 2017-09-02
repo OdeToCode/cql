@@ -1,8 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F4FBE2E-454E-4D16-AED1-5104BF45E429}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqlLexerParser", "src\CqlLexerParser\CqlLexerParser.csproj", "{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grammar", "Grammar", "{8C7E67E1-897B-452A-9277-1E3C724ACA5F}"
+	ProjectSection(SolutionItems) = preProject
+		src\Grammar\cql.g4 = src\Grammar\cql.g4
+		src\Grammar\fhirpath.g4 = src\Grammar\fhirpath.g4
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "measures", "measures", "{74B43109-21C2-4336-90CE-0DC265F1E459}"
+	ProjectSection(SolutionItems) = preProject
+		measures\cms146v2.cql = measures\cms146v2.cql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4EB72D51-A16D-4ECD-81E2-F8EA433894DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqlTests", "test\CqlTests\CqlTests.csproj", "{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,7 +31,41 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|x64.Build.0 = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|x64.ActiveCfg = Release|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|x64.Build.0 = Release|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C}.Release|x86.Build.0 = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|x64.Build.0 = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Debug|x86.Build.0 = Debug|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|x64.ActiveCfg = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|x64.Build.0 = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|x86.ActiveCfg = Release|Any CPU
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C7CFD94-7844-4F2A-8549-93938FA1EB4C} = {4F4FBE2E-454E-4D16-AED1-5104BF45E429}
+		{8C7E67E1-897B-452A-9277-1E3C724ACA5F} = {4F4FBE2E-454E-4D16-AED1-5104BF45E429}
+		{999A3081-B11F-4FA4-92FD-BEC4A3D78F6D} = {4EB72D51-A16D-4ECD-81E2-F8EA433894DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C419F7A4-739F-4891-B49F-9B123BBE00A7}
 	EndGlobalSection
 EndGlobal
