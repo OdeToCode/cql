@@ -1,0 +1,4 @@
+{
+    "antlr4.generation.language": "CSharp",
+    "antlr4.generation.mode": "external"
+}
