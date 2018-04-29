@@ -15,14 +15,14 @@ namespace Experiment
 
         static void RunHello()
         {
-            var reader = new StringReader("hello a\rhello b");
+            var reader = new StringReader("hello a \r hello b");
             var input = new AntlrInputStream(reader);
             var lexer = new helloLexer(input);
             var tokens = new CommonTokenStream(lexer);
             var parser = new helloParser(tokens);
             var walker = new ParseTreeWalker();
             var listener = new DumpHelloListener();
-            walker.Walk(listener, parser.r());
+            walker.Walk(listener, parser.hellofile());
         }
 
         static void RunArrayInit()

@@ -3,6 +3,7 @@ using System.IO;
 using Xunit;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
+using static cqlParser;
 
 namespace CqlTests.LexerParser
 {
@@ -14,40 +15,37 @@ namespace CqlTests.LexerParser
             var lexer = new cqlLexer(new AntlrFileStream("cms146v2.cql"));
             var tokens = new CommonTokenStream(lexer);
             var parser = new cqlParser(tokens);
+            var walker = new ParseTreeWalker();
+            var listener = new cqlListener();
+
+            walker.Walk(listener, parser.library());
+
+            Assert.NotNull(listener.Library);
         }
 
         [Fact]
         public void RejectsBadSyntax()
         {
-            var reader = new StringReader("foo bar baz");
+            var reader = new StringReader("context bam");
             var lexer = new cqlLexer(new AntlrInputStream(reader));
             var tokens = new CommonTokenStream(lexer);
             var parser = new cqlParser(tokens);
-            var context = parser.library();
-            
+            var walker = new ParseTreeWalker();
             var listener = new cqlListener();
-            ParseTreeWalker.Default.Walk(listener, context);
 
-            Assert.NotNull(listener.Library);   
-         
+            walker.Walk(listener, parser.library());
+
+            Assert.Null(listener.Library);
         }
 
         class cqlListener : cqlBaseListener
         {
+            public LibraryContext Library { get; set; }
 
-            public override void VisitErrorNode([NotNull] IErrorNode node)
-            {
-                base.VisitErrorNode(node);
-            }
-
-            public override void EnterLibraryDefinition([NotNull] cqlParser.LibraryDefinitionContext context)
+            public override void EnterLibrary([NotNull] LibraryContext context)
             {
                 Library = context;
-                base.EnterLibraryDefinition(context);
-            }
-            internal cqlParser.LibraryDefinitionContext Library
-            {
-                get; set;
+                base.EnterLibrary(context);
             }
         }
     }
